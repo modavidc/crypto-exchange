@@ -1,6 +1,11 @@
 <template>
   <div>
-    <bounce-loader class="custom-class" :color="'#bada55'" :loading="isLoading" :size="60"></bounce-loader>
+    <bounce-loader
+      class="custom-class"
+      :color="'#bada55'"
+      :loading="isLoading"
+      :size="'60'"
+    ></bounce-loader>
     <px-assets-table v-if="!isLoading" :assets="assets"></px-assets-table>
   </div>
 </template>

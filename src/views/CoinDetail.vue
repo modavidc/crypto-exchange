@@ -59,7 +59,9 @@
           <button
             @click="toggleConverter"
             class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-          >{{ fromUsd ? `USD a ${asset.symbol}` : `${asset.symbol} a USD` }}</button>
+          >
+            {{ fromUsd ? `USD a ${asset.symbol}` : `${asset.symbol} a USD` }}
+          </button>
 
           <div class="flex flex-row my-5">
             <label class="w-full" for="convertValue">
@@ -68,12 +70,15 @@
                 id="convertValue"
                 type="number"
                 class="text-center bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
-                :placeholder="`Valor en ${fromUsd ? 'USD' : asset.symbol }`"
+                :placeholder="`Valor en ${fromUsd ? 'USD' : asset.symbol}`"
               />
             </label>
           </div>
 
-          <span class="text-xl">{{ convertResult }} {{ !fromUsd ? `USD` : `${asset.symbol}` }}</span>
+          <span class="text-xl"
+            >{{ convertResult }}
+            {{ !fromUsd ? `USD` : `${asset.symbol}` }}</span
+          >
         </div>
       </div>
 
@@ -104,7 +109,9 @@
             >
               <slot>Obtener Link</slot>
             </px-button>
-            <a v-else class="hover:underline text-green-600" target="_blank">{{ market.url }}</a>
+            <a v-else class="hover:underline text-green-600" target="_blank">{{
+              market.url
+            }}</a>
           </td>
         </tr>
       </table>

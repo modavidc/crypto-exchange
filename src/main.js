@@ -8,12 +8,6 @@ import Chartkick from "vue-chartkick";
 Vue.use(VueSpinners);
 Vue.use(Chartkick.use(Chart));
 
-// import Chartkick from "vue-chartkick";
-// import Chart from "chart.js";
-
-// Vue.component("pulse-loader", require("vue-spinner/src/PulseLoader.vue"));
-// Vue.use(Chartkick.use(Chart));
-
 import router from "@/router";
 import { dollarFilter } from "@/filters";
 import { percentFilter } from "@/filters";
