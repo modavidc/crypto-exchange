@@ -4,7 +4,7 @@
       class="custom-class"
       :color="'#bada55'"
       :loading="isLoading"
-      :size="'60'"
+      :size="60"
     ></bounce-loader>
     <px-assets-table v-if="!isLoading" :assets="assets"></px-assets-table>
   </div>
@@ -26,8 +26,10 @@ export default {
   },
   created() {
     this.isLoading = true;
+    let limit = 20;
+
     api
-      .getAssets()
+      .getAssets(limit)
       .then(assets => (this.assets = assets))
       .finally(() => (this.isLoading = false))
       .catch(err => console.log(err));

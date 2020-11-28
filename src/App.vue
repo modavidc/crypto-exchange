@@ -1,6 +1,15 @@
 <template>
   <main>
-    <px-header :links="links" />
+    <div>
+      <bounce-loader
+        class="custom-class"
+        :color="'#bada55'"
+        :loading="isLoading"
+        :size="30"
+      ></bounce-loader>
+
+      <px-header v-if="!isLoading" :links="links" />
+    </div>
 
     <router-view class="container px-5 sm:px-20 py-20 flex justify-center" />
   </main>
@@ -8,6 +17,7 @@
 
 <script>
 import PxHeader from "@/components/PxHeader";
+import api from "./api";
 
 export default {
   name: "App",
@@ -16,49 +26,40 @@ export default {
   },
   data() {
     return {
-      links: [
-        {
-          title: "BTC",
-          to: { name: "CoinDetail", params: { id: "bitcoin" } }
-        },
-        {
-          title: "ETH",
-          to: { name: "CoinDetail", params: { id: "ethereum" } }
-        },
-        {
-          title: "XRP",
-          to: { name: "CoinDetail", params: { id: "ripple" } }
-        },
-        {
-          title: "BCH",
-          to: { name: "CoinDetail", params: { id: "bitcoin-cash" } }
-        },
-        {
-          title: "BSV",
-          to: { name: "CoinDetail", params: { id: "bitcoin-sv" } }
-        },
-        {
-          title: "LTC",
-          to: { name: "CoinDetail", params: { id: "litecoin" } }
-        },
-        {
-          title: "LTC",
-          to: { name: "CoinDetail", params: { id: "litecoin" } }
-        },
-        {
-          title: "USDT",
-          to: { name: "CoinDetail", params: { id: "tether" } }
-        },
-        {
-          title: "BNB",
-          to: { name: "CoinDetail", params: { id: "binance-coin" } }
-        },
-        {
-          title: "XTZ",
-          to: { name: "CoinDetail", params: { id: "texos" } }
-        }
-      ]
+      isLoading: true,
+      links: []
     };
+  },
+  methods: {
+    getAssetsLinks(assets) {
+      let assetsLinks = [];
+
+      assets.forEach(asset => {
+        assetsLinks.push(this.formatAssetLink(asset));
+      });
+
+      return assetsLinks;
+    },
+    formatAssetLink(asset) {
+      let assetLink = {
+        title: asset.symbol,
+        to: { name: "CoinDetail", params: { id: asset.id } }
+      };
+
+      return assetLink;
+    }
+  },
+  created() {
+    this.isLoading = true;
+    let limit = 10;
+
+    api
+      .getAssets(limit)
+      .then(assets => {
+        this.links = this.getAssetsLinks(assets);
+      })
+      .finally(() => (this.isLoading = false))
+      .catch(err => console.log(err));
   }
 };
 </script>

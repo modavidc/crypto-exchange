@@ -1,40 +1,40 @@
 const url = "https://api.coincap.io/v2";
 
-function getAssets() {
-  return fetch(`${url}/assets?limit=20`)
-    .then(res => res.json())
-    .then(res => res.data);
+async function getAssets(limit = 20) {
+  const res = await fetch(`${url}/assets?limit=${limit}`);
+  const res_1 = await res.json();
+  return res_1.data;
 }
 
-function getAsset(coin) {
+async function getAsset(coin) {
   return fetch(`${url}/assets/${coin}`)
     .then(res => res.json())
     .then(res => res.data);
 }
 
-function getAssetHistory(coin) {
+async function getAssetHistory(coin) {
   const now = new Date();
   const end = now.getTime();
   now.setDate(now.getDate() - 1);
   const start = now.getTime();
 
-  return fetch(
+  const res = await fetch(
     `${url}/assets/${coin}/history?interval=h1&start=${start}&end=${end}`
-  )
-    .then(res => res.json())
-    .then(res => res.data);
+  );
+  const res_1 = await res.json();
+  return res_1.data;
 }
 
-function getMarkets(coin) {
-  return fetch(`${url}/assets/${coin}/markets?limit=5`)
-    .then(res => res.json())
-    .then(res => res.data);
+async function getMarkets(coin) {
+  const res = await fetch(`${url}/assets/${coin}/markets?limit=5`);
+  const res_1 = await res.json();
+  return res_1.data;
 }
 
-function getExchange(id) {
-  return fetch(`${url}/exchanges/${id}`)
-    .then(res => res.json())
-    .then(res => res.data);
+async function getExchange(id) {
+  const res = await fetch(`${url}/exchanges/${id}`);
+  const res_1 = await res.json();
+  return res_1.data;
 }
 
 export default {

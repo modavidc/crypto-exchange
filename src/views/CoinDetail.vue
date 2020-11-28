@@ -109,9 +109,13 @@
             >
               <slot>Obtener Link</slot>
             </px-button>
-            <a v-else class="hover:underline text-green-600" target="_blank">{{
-              market.url
-            }}</a>
+            <a
+              :href="market.url"
+              v-else
+              class="hover:underline text-green-600"
+              target="_blank"
+              >{{ market.url }}</a
+            >
           </td>
         </tr>
       </table>
