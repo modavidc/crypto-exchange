@@ -1,14 +1,37 @@
-# crypto-exchange
+# 📌 Crypto Exchange
 
-Aplicación para consultar precios de criptomonedas y convertir saldos. Curso Básico de Vue.js de @platzi.
+Application to check cryptocurrency prices and convert balances. 
 
-## Demo Live
+## 🔨 Technologies
 
-```
-s
-```
+* Laravel → (https://laravel.com/docs/7.x/)
+* Argon - Design System -> (https://demos.creative-tim.com/argon-design-system/docs/getting-started/overview.html)
 
-## Project setup
+## 💻 Requirements
+
+* NODE >= 12 
+* NPM >= 6
+
+## 👓 Preview
+
+You can see the project running here → [crypto-exchange](crypto-exchange.cf/).
+
+<details>
+    <summary>🖥 Desktop version </summary>
+
+    - Home: 
+
+![](public/screenshots/desktop_1.png)
+
+    - Crypto Coin Detail: 
+
+![](public/screenshots/desktop_2.png)
+
+</details>
+
+## 🚀 Install
+
+### Project setup
 
 ```
 npm install
@@ -32,6 +55,24 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
+## Author
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+👤 **Moisés Cedeño**
+
+- Email: [moisesdavidaaron@gmail.com](mailto:moisesdavidaaron@gmail.com)
+- Twitter: [@modavidc](https://twitter.com/modavidc)
+- Github: [@modavidc](https://github.com/modavidc)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome.<br />
+Feel free to check [issues page](https://github.com/modavidc/crypto-exchange/issues) if you want to contribute.<br />
+
+## 📝 License
+
+Copyright © 2020 [Moisés Cedeño](https://github.com/modavidc).<br />
+This project is [MIT](https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE) licensed.
+
+---
+
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
