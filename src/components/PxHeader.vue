@@ -7,7 +7,7 @@
           <router-link
             :to="{ name: 'home' }"
             class="font-semibold text-xl tracking-tight"
-            >Exchanger.io</router-link
+            >Crypto Exchange</router-link
           >
         </div>
         <div
