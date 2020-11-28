@@ -4,13 +4,13 @@ Application to check cryptocurrency prices and convert balances.
 
 ## 🔨 Technologies
 
-* Laravel → (https://laravel.com/docs/7.x/)
-* Argon - Design System -> (https://demos.creative-tim.com/argon-design-system/docs/getting-started/overview.html)
+* Vue → (https://vuejs.org/)
+* Tailwind → (https://tailwindcss.com/)
 
 ## 💻 Requirements
 
-* NODE >= 12 
-* NPM >= 6
+* node >= 12 
+* npm >= 6
 
 ## 👓 Preview
 
