@@ -14,7 +14,7 @@ Application to check cryptocurrency prices and convert balances.
 
 ## 👓 Preview
 
-You can see the project running here → [crypto-exchange](crypto-exchange.cf/).
+You can see the project running here → [crypto-exchange](https://crypto-exchange-vue.web.app).
 
 <details>
     <summary>🖥 Desktop version </summary>
